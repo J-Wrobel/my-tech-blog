@@ -1,0 +1,38 @@
+baseURL = 'https://madtinkerer.github.io/'
+languageCode = 'en-us'
+title = 'Mad Tinkerer`s bucket'
+
+theme = "hugo-theme-m10c"
+
+
+
+[params]
+author = "Mad Tinkerer"
+description = "Professional embedded SW engineer by day, mad tinkerer by late night! Let me pull You into crazy tech world with all my might!"
+avatar = ""
+menu_item_separator = " | "
+favicon = ""
+CopyrightHTML= "Copyright &#xA9; 2013 John Doe. All Rights Reserved."
+
+  [[params.social]]
+    icon = "github"
+    name = "Github"
+    url = "https://github.com/J-Wrobel"
+
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 2
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 3

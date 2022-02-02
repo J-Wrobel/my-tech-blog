@@ -1,0 +1,4 @@
+[submodule "madtinkererblog/public"]
+	path = madtinkererblog/public
+	url = https://github.com/J-Wrobel/madtinkerer.github.io.git
+	branch = main
