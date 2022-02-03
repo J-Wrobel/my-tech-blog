@@ -8,6 +8,7 @@ tags:
 - about
 keywords:
 - tech blog
+- blogging
 - engineering
 ---
 
@@ -32,7 +33,7 @@ This is my first blog. I could even say that it is a first serious attempt to co
 Beside that I feel that I need a space which somehow bridges my work life and passion for technology in an unrestrictive or maybe less dependent way. A place to release some creative steam even if it may achieve nothing particular. A place that is my cave in this crazy daily life.
 
 #### Immediate plans for this space?
-Since those are my first steps then I probably need to learn how to walk. I will be writing more posts and publishing them as time allows. I plan to integrate comment system in this site so I can interact with You my dear Reader. 
+Since those are my first steps then I probably need to learn how to walk. I will be writing more posts and publishing them as time allows. I plan to integrate comment system in this site so I can interact with You my fellow Tinkerer. 
 
 
 #### And You? Don't You have a good reason to start something new?
