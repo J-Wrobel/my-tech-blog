@@ -1,7 +1,7 @@
 ---
 title: "Hello blog!"
 date: 2022-02-01T09:17:47-05:00
-draft: false
+draft: true
 
 tags:
 - blog

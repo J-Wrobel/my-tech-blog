@@ -1,7 +1,7 @@
 ---
 title: "Starting rust on rp2040."
 date: 2022-02-01T09:17:47-05:00
-draft: false
+draft: true
 
 tags:
 - rp2040
