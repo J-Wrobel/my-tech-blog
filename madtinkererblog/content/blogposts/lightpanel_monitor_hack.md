@@ -1,6 +1,6 @@
 ---
 title: "Need more light? Get a monitor."
-date: 2022-02-08T09:17:47-05:00
+date: 2022-02-01T09:17:47-05:00
 draft: true
 
 tags:
@@ -39,7 +39,7 @@ First step is to get a monitor for yourself to hack. The disassemble it and lear
 
 Most of monitors are built similarly. They usually have a power supply board with back light driver, a logic board, small board with switches or capacitive touch buttons and a wide board connected to panel LCD. For our hack we will aim to leave only the power board with backlight driver but in order to pull it off we need to do some recon. 
 
-#### Tour de monitor
+#### Tour de monitor.
 
 I will start with checking out the backlight driver to see if I can force it to be on all the time. Usually The logic board sends commands to this driver in form of certain signals that control standby and light intensity. After googling out the part number of this chip I found only a one page manual for this XXXXXXX IC. It is very general, holds pinout and names for signals and a few sentences of functionality. It mentions that only that light intensity can be controlled via external PWM, external analog signal or some internal PWM. No word on how to know which one is used, or what are the PWM frequencies, voltage levels etc. Looking at the board there seem to be no usefull clues. Let's stop here and jump to connection to logic board. 
 
@@ -47,9 +47,14 @@ Connector for logic board is on the other side of power board. It holds a 7-pin 
 
 Logic boards heart is a YYYYYY. It is esay to find datasheet for that. It is a massive chip with all the capabilities to process video and drive LCD screens. We are interested in how it operates the backlight. Looking through its specification it may be difficult to find anything detailed as well. In this case it would be best to take out an oscilloscope and DMM and do the measuring our selves. A word of caution on that it requires You to measure things on live and working monitor but taken appart. There is a risk of shoking Yourself or your equipment with mains in case of some mistake. Since I do not have an oscilscope or a quiet place at home to perform such measurements I try some assumptions. 
 
-#### Formulating the hack
+#### Formulating the hack.
 
 Based on the done research on the monitor, let's assume that the backlight driver is actually driven by some logic level EN signal and a PWM of some unknow frequency. We do not know the voltage of the logic levels. It may be 5V or 3,3V or even 1,8 as YYYYYY spec mentions. I think we can rule out 1,8V as I think it is pretty low for a monitor. 5V is supplied by the power board to logic board, but the spec seems to mention operation on 3,3V and also mentions TTL levels for logic. TTL levels are basically a standard for when a signals is considered high or low and is based on voltages driven by transistors. It means that anything above 2,0V should be recognised as high logic level. I would assume the same for PWM signal and additionaly a constant high signal is basically the same as PWM with 100% duty, meaning 100% of backlight intensity. 
+
+
+{{< figure src="/img/monitor_hack_pb_connector.png" title="Logic board connector"
+width="400px" class="float-right" >}}
+
 
 Now that we have some educated guesses as to what signals are needed to hack the backlight driver we can perform the hack. As mentioned we need a constant signal with voltage from 2,0-3,3V range. For this we will use the 5V which powerboard supplies to the logic board. We can get rid of a logic board and use a voltage divider to divide 5V into 2,5V with a divider of 1/2 ratio. For that I take two resistors with value 68k and solder them as in the picture (excuse the soldering). When soldering You may need to apply a bit of fresh solder to the joints of the connector to lower the melting point and allow easy soldering. This way we are providing around 2,5V to EN and PWM as soon as the power supply is connected to mains. It should be according to the goal we setup earlier. Providing it works of course.
 
